@@ -1,12 +1,10 @@
 # Container Scan Action
 
-A GitHub Action that scans container images for vulnerabilities using a custom script.
+A GitHub Action that scans container images for vulnerabilities.
 
 ## Description
 
-This action executes a custom scanning script located at `/usr/local/bin/script.sh` within the container image and captures its outputs. 
-
-The script analyzes files in a specified image and provides vulnerability scan results.
+The script the specified image and provides vulnerability scan results.
 
 ## Usage
 
@@ -48,19 +46,10 @@ jobs:
 
 ## Features
 
-- Executes custom scanning binary at `/usr/local/bin/script.sh`
-- Passes the specified image as an argument to the script
-- Captures both stdout and stderr from the script execution
-- Provides structured outputs for use in subsequent workflow steps
-- Handles script exit codes appropriately
+- Compiles SBOM (Software Bill of Materials)
+- Scans for vulnerabilities
+- Scans for license compliance issues
 
-## Example Scan Output
-
-The scan output typically includes:
-- Files analyzed count
-- Vulnerability severity breakdown
-- Scan completion status
-- Total files scanned
 
 ## License
 
