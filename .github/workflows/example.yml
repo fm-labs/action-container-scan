@@ -18,7 +18,7 @@ jobs:
       id: container-scan
       uses: ./
       with:
-        path: '.'
+        image: 'nginx:latest'  # Example image to scan
         
     - name: Display scan results
       run: |

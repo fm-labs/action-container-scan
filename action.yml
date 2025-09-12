@@ -3,8 +3,8 @@ description: 'Scans container images for vulnerabilities using custom script'
 author: 'fm-labs'
 
 inputs:
-  path:
-    description: 'A path within the source code repo'
+  image:
+    description: 'A image within the source code repo'
     required: false
     default: '.'
 
@@ -18,7 +18,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.path }}
+    - ${{ inputs.image }}
 
 branding:
   icon: 'shield'

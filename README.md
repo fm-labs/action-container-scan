@@ -4,7 +4,9 @@ A GitHub Action that scans container images for vulnerabilities using a custom s
 
 ## Description
 
-This action executes a custom scanning script located at `/usr/local/bin/script.sh` within the container image and captures its outputs. The script analyzes files in a specified path and provides vulnerability scan results.
+This action executes a custom scanning script located at `/usr/local/bin/script.sh` within the container image and captures its outputs. 
+
+The script analyzes files in a specified image and provides vulnerability scan results.
 
 ## Usage
 
@@ -22,7 +24,7 @@ jobs:
       id: scan
       uses: fm-labs/container-scan-action@v1
       with:
-        path: '.'  # Optional: defaults to '.'
+        image: 'nginx:latest'
         
     - name: Display scan results
       run: |
@@ -33,9 +35,9 @@ jobs:
 
 ## Inputs
 
-| Input | Description | Required | Default |
-|-------|-------------|----------|---------|
-| `path` | A path within the source code repo to scan | No | `.` |
+| Input | Description              | Required | Default |
+|-------|--------------------------|----------|---------|
+| `image` | The container image name | Yes      | `` |
 
 ## Outputs
 
@@ -47,7 +49,7 @@ jobs:
 ## Features
 
 - Executes custom scanning binary at `/usr/local/bin/script.sh`
-- Passes the specified path as an argument to the script
+- Passes the specified image as an argument to the script
 - Captures both stdout and stderr from the script execution
 - Provides structured outputs for use in subsequent workflow steps
 - Handles script exit codes appropriately

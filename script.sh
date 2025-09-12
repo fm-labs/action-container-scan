@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # This script simulates a container scanning tool
-# It takes a path as an argument and performs a mock scan
+# It takes a image as an argument and performs a mock scan
 
 set -e
 
 PATH_TO_SCAN="${1:-.}"
 
 echo "Container Scan Action - Starting scan..."
-echo "Scanning path: $PATH_TO_SCAN"
+echo "Scanning image: $PATH_TO_SCAN"
 echo ""
 
 # Simulate scanning process

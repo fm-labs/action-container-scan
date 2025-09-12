@@ -2,7 +2,7 @@
 
 set -e
 
-# Get the path argument passed from the action
+# Get the image argument passed from the action
 PATH_ARG="${1:-.}"
 
 echo "Container Scan Action - Entrypoint"
