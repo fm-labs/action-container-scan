@@ -16,11 +16,11 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
     
     - name: Run Container Scan
       id: scan
-      uses: fm-labs/container-scan-action@v1
+      uses: fm-labs/action-container-scan@v1
       with:
         image: 'nginx:latest'
         
